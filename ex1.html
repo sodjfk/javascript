@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>WEB1 - JavaScript</title>
+    <meta charset="utf-8">
+    <script>
+        /*
+        function LinksSetColor(color){     //링크색상이 바뀌는 함수
+            var alist = document.querySelectorAll('a');      //querySelectorAll
+            var i = 0;
+            while(i < alist.length){           //반복문
+                 alist[i].style.color = color;
+                 i++;
+             }
+        } 
+        */
+        var Links = {          //links객체
+            setColor:function(color){
+                var alist = document.querySelectorAll('a');      
+                var i = 0;
+                 while(i < alist.length){           
+                    alist[i].style.color = color;
+                    i++;
+                }
+            }
+        }
+        var Body = {           //Body객체
+            setColor:function(color){
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor:function(color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        
+        function nightDayHandler(self){      //야간모드 함수
+        var target = document.querySelector('body');
+        if(self.value === 'night'){
+            Body.setBackgroundColor('black');
+            Body.setColor('white');
+            self.value = 'day';
+            Links.setColor('powderblue');
+        
+        }else{
+            Body.setBackgroundColor('white');
+            Body.setColor('black');
+            self.value = 'night';
+            Links.setColor('blue');
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1><a href="html.html">WEB</a></h1>   
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)"> 
+            
+    <ul>  
+     <script>  
+        var coworkers = ["egoing", "leezche", "duru", "taeho"];    //배열
+        var i = 0;
+        while(i < coworkers.length){
+            document.write('<li><a href="http://a.com/'+coworkers[i]+'">'+coworkers[i]+'</a></li>');
+            i++;        
+        }
+     </script>
+    </ul>
+
+    
+</body>
+</html>
